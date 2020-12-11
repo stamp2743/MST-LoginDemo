@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+@{
+    var baseurl = Url.Content("~/");
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Web Test</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/themes/freelancer/assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/themes/freelancer/css/styles.css" rel="stylesheet" />
+    @RenderSection("Css", false)
+</head>
+<body id="page-top" ng-app="myApp">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav" style="height: 55px; background-color: darkblue">
+        <div class="container">
+            <a class="navbar-brand">WEB TEST</a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                           asp-area="" asp-controller="Home" asp-action="Test">Trouble shooting</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Home/Test"><b>HOME</b></a>
+                            <a class="dropdown-item" href="/Home/NewTrouble"><b>NEW</b></a>
+                            <a class="dropdown-item" href="/Home/Add"><b>VIEW</b></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+
+    <script src="~/node_modules/angular/angular.js"></script>
+    <script src="~/node_modules/angular/angularjs-dropdown-multiselect/dist/src/angularjs-dropdown-multiselect.js"></script>
+    <script src="~/js/apps/apps.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="~/themes/freelancer/assets/mail/jqBootstrapValidation.js"></script>
+    <script src="~/themes/freelancer/assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/themes/freelancer/js/scripts.js"></script>
+
+    <script src="~/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link href="~/node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+    <script>
+        window.baseUrl = "@baseurl";
+    </script>
+
+    @RenderSection("Scripts", false)
+</body>
+</html>

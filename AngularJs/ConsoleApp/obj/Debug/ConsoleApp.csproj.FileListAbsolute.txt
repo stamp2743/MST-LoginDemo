@@ -1,0 +1,7 @@
+D:\Developer\@Temp\AngularJs\ConsoleApp\bin\Debug\ConsoleApp.exe.config
+D:\Developer\@Temp\AngularJs\ConsoleApp\bin\Debug\ConsoleApp.exe
+D:\Developer\@Temp\AngularJs\ConsoleApp\bin\Debug\ConsoleApp.pdb
+D:\Developer\@Temp\AngularJs\ConsoleApp\obj\Debug\ConsoleApp.csprojAssemblyReference.cache
+D:\Developer\@Temp\AngularJs\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
+D:\Developer\@Temp\AngularJs\ConsoleApp\obj\Debug\ConsoleApp.exe
+D:\Developer\@Temp\AngularJs\ConsoleApp\obj\Debug\ConsoleApp.pdb

@@ -1,0 +1,10 @@
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe.config
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\bin\Debug\WindowsFormsApp.pdb
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\obj\Debug\WindowsFormsApp.csprojAssemblyReference.cache
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form1.resources
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\obj\Debug\WindowsFormsApp.Properties.Resources.resources
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
+D:\Developer\@Temp\AngularJs\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb

@@ -1,0 +1,162 @@
+﻿@model WebApplication.Models.EmployeeModel;
+@{
+    ViewData["Title"] = "Add";
+}
+@section Css{
+    <style>
+        h3 {
+            color: royalblue;
+        }
+    </style>
+}
+<div ng-controller="AngularController" ng-init="Init();">
+    <div class="text-left">
+        <br />
+        <h6>&nbsp;&nbsp;&nbsp; Machine Trouble Shooting Guide</h6>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header text-right">
+                                <br />
+                                @*<input type="text" ng-model="search" />*@
+                                <input class="form-control col-md-4" data-toggle="collapse" type="text" placeholder="Search" aria-label="Search" ng-model="search">
+                                <button type="button" ng-show="mode != 'edit'" class="btn btn-warning col-md-1" ng-click="mode = 'edit'" data-backdrop="static" data-keyboard="false">
+                                    EDIT
+                                </button>
+                                <button type="button" ng-show="mode == 'edit'" class="btn btn-success col-md-1" ng-click="UpdateEmployee()" data-backdrop="static" data-keyboard="false">
+                                    SAVE
+                                </button>
+                                <button type="button" ng-show="mode == 'edit'" class="btn btn-danger btn-md" ng-click="GetEmployee()" data-backdrop="static" data-keyboard="false">
+                                    CANCEL
+                                </button>
+
+                                <button type="button" class="btn btn-success col-md-1" ng-show="mode != 'edit'" data-toggle="modal" data-target="#modalAddForm">
+                                    ADD NEW
+                                </button>
+
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead class="table text-white bg-secondary mb-3">
+                                            <tr class="text-center">
+                                                <th style="width:5%;">No.</th>
+                                                <th style="width:10%;">Department</th>
+                                                <th style="width:15%;">EN.</th>
+                                                <th style="width:25%;">Name</th>
+                                                <th style="width:10%;">Age</th>
+                                                <th style="width:15%;">Salary</th>
+                                                <th style="width:15%;">Alive</th>
+                                                <th style="width:15%;" ng-show="mode=='edit'">Action</th>
+                                            </tr>
+                                        </thead>
+                                        @*-------  Show -------- *@
+                                        <tbody>
+                                            <tr ng-show="mode !='edit'" ng-repeat="item in model.Items | filter: search | orderBy : 'departments.name' ">
+                                                <td>{{$index+1}}</td>
+                                                <td>{{item.departments.name}}</td>
+                                                <td>{{item.en}}</td>
+                                                <td>{{item.name}}</td>
+                                                <td>{{item.age}}</td>
+                                                <td>{{item.salary|number}}</td>
+                                                <td>
+                                                    <select disabled class="form-control"
+                                                            ng-model="item.alive"
+                                                            ng-options="item.Value as item.Text for item in alives">
+                                                    </select>
+                                                </td>
+
+                                            </tr>
+                                            @*-------  Edit -------- *@
+                                            <tr ng-show="mode=='edit'" ng-repeat="item in model.Items | filter: search | orderBy : 'departments.name' ">
+                                                <td>{{$index+1}}</td>
+                                                <td>
+                                                    <select class="form-control" ng-model="item.departmentid" ng-options="item.id as item.name for item in model.Departments"></select>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" ng-model="item.en" type="text" disabled />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" ng-model="item.name" type="text" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" ng-model="item.age" type="number" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" ng-model="item.salary" type="number" />
+                                                </td>
+                                                <td>
+                                                    <select class="form-control" ng-model="item.alive" ng-options="item.Value as item.Text for item in alives"></select>
+                                                </td>
+                                                <td>
+
+                                                    <button class="btn btn-danger btn-sm" ng-click="Delete(item)">Delete</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @*-----------------------------------------------------------MODAL FORM----------------------------*@
+    <div class="modal fade" id="modalAddForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add New Employee</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <label data-error="wrong" data-success="right" for="form29" class="ml-0">EN.</label>
+                        <input type="text" ng-model="user.En" class="form-control validate" placeholder="EN.">
+                    </div>
+
+                    <div class="md-form mb-5">
+                        <label data-error="wrong" data-success="right" for="form29" class="ml-0">NAME</label>
+                        <input type="text" ng-model="user.Name" class="form-control validate" placeholder="NAME">
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <label data-error="wrong" data-success="right" for="form29" class="ml-0">DEPARTMENT</label>
+                        <select class="form-control" ng-options="item.id as item.name for item in model.Departments" ng-model="user.Departmentid">
+                        </select>
+                    </div>
+
+                    <div class="md-form mb-5">
+                        <label data-error="wrong" data-success="right" for="form29" class="ml-0">AGE</label>
+                        <input type="number" ng-model="user.Age" class="form-control validate" placeholder="AGE">
+                    </div>
+
+                    <div class="md-form mb-5">
+                        <label data-error="wrong" data-success="right" for="form29" class="ml-0">SALARY</label>
+                        <input type="number" ng-model="user.Salary" class="form-control validate" placeholder="SALARY">
+                    </div>
+                </div>
+                <div class="modal-body mx-3"><pre>{{user|json}}</pre></div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="InsertEmployee();">ADD</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/apps/AngularController.js"></script>
+}
+

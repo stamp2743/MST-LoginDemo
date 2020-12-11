@@ -1,0 +1,37 @@
+﻿@model WebApplication.Models.DepartmentModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<section class="content">
+    <div class="container-fluid">
+        <br /><h1 class="display-4">@ViewData["Title"]</h1>
+        @section Css{
+            <style>
+                h1 {
+                    color: royalblue;
+                }
+            </style>
+        }
+        <p>Use this page to detail your site's privacy policy.</p>
+
+
+
+
+        <div>
+            <p>
+                Department Name: @Model.Name (@Model.Total)<br />
+                Total Age: @Model.SumAge
+                @foreach (var emp in Model.Employees)
+                {
+                    <hr />
+                    <div>
+                        En: @emp.En<br />
+                        Name: @emp.Name<br />
+                        Department: @emp.Department<br />
+                        Age: @emp.Age
+                    </div>
+                }
+            </p>
+        </div>
+    </div>
+</section>

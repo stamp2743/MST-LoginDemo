@@ -1,0 +1,204 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\node_modules\angular\node_modules\**" />
+    <Content Remove="wwwroot\node_modules\angular\node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\node_modules\angular\node_modules\**" />
+    <None Remove="wwwroot\node_modules\angular\node_modules\**" />
+    <TypeScriptCompile Remove="wwwroot\node_modules\angular\node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Remove="wwwroot\node_modules\sweetalert2\sweetalert2.d.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\node_modules\.package-lock.json" />
+    <Content Include="wwwroot\node_modules\angular\angular-csp.css" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\bower.json" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\bowerDocs.json" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\dist\index.css" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\dist\src\index.css" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\assets\body-bg.jpg" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\assets\download-button.png" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\assets\github-button.png" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\assets\header-bg.jpg" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\assets\highlight-bg.jpg" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\assets\sidebar-bg.jpg" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\index.html" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\styles\app.css" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\package.json" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\component\angularjs-dropdown-multiselect.html" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\main\main.template.html" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\v1docs\v1docs.template.html" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\assets\body-bg.jpg" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\assets\download-button.png" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\assets\github-button.png" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\assets\header-bg.jpg" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\assets\highlight-bg.jpg" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\assets\sidebar-bg.jpg" />
+    <Content Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\index.html" />
+    <Content Include="wwwroot\node_modules\angular\bower.json" />
+    <Content Include="wwwroot\node_modules\angular\package.json" />
+    <Content Include="wwwroot\node_modules\sweetalert2\dist\sweetalert2.css" />
+    <Content Include="wwwroot\node_modules\sweetalert2\dist\sweetalert2.min.css" />
+    <Content Include="wwwroot\node_modules\sweetalert2\package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Database\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\node_modules\angular\angular.js" />
+    <None Include="wwwroot\node_modules\angular\angular.min.js" />
+    <None Include="wwwroot\node_modules\angular\angular.min.js.gzip" />
+    <None Include="wwwroot\node_modules\angular\angular.min.js.map" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\.bowerrc" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\.editorconfig" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\.eslintrc" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\.npmignore" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\CHANGELOG.md" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\dist\angularjs-dropdown-multiselect.min.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\dist\maps\angularjs-dropdown-multiselect.min.js.map" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\dist\src\angularjs-dropdown-multiselect.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\maps\scripts\app.js.map" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\maps\scripts\vendor.js.map" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\scripts\app.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\docs\scripts\vendor.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulpfile.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\.eslintrc" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\build.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\conf.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\inject.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\scripts.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\server.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\styles.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\unit-tests.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\gulp\watch.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\karma.conf.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\LICENSE" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\README.md" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\component\angularjs-dropdown-multiselect.controller.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\component\angularjs-dropdown-multiselect.directive.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\component\angularjs-dropdown-multiselect.module.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\component\index.scss" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\index.module.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\index.scss" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\main\main.component.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\main\main.controller.js" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\main\pygment_trac.scss" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\main\stylesheet.scss" />
+    <None Include="wwwroot\node_modules\angular\angularjs-dropdown-multiselect\src\app\v1docs\v1docs.component.js" />
+    <None Include="wwwroot\node_modules\angular\index.js" />
+    <None Include="wwwroot\node_modules\angular\LICENSE.md" />
+    <None Include="wwwroot\node_modules\angular\README.md" />
+    <None Include="wwwroot\node_modules\sweetalert2\CHANGELOG.md" />
+    <None Include="wwwroot\node_modules\sweetalert2\dist\sweetalert2.all.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\dist\sweetalert2.all.min.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\dist\sweetalert2.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\dist\sweetalert2.min.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\LICENSE" />
+    <None Include="wwwroot\node_modules\sweetalert2\README.md" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\constants.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\globalState.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\buttons-handlers.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\close.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\enable-disable-elements.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\getInput.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\hideLoading.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\keydown-handler.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\popup-click-handler.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\progress-steps.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\update.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\validation-message.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\_destroy.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\instanceMethods\_main.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\privateMethods.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\privateProps.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_animations.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_body.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_core.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_mixins.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_polyfills.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_theming.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_toasts-animations.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_toasts-body.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\scss\_toasts.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\staticMethods.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\staticMethods\argsToParams.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\staticMethods\dom.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\staticMethods\fire.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\staticMethods\mixin.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\staticMethods\queue.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\staticMethods\showLoading.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\staticMethods\timer.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\SweetAlert.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\sweetalert2.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\sweetalert2.scss" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\aria.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\classes.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\defaultInputValidators.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\DismissReason.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\animationEndEvent.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\domUtils.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\getters.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\index.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\init.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\inputUtils.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\measureScrollbar.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\parseHtmlToContainer.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\render.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderActions.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderCloseButton.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderContainer.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderContent.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderFooter.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderHeader.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderIcon.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderImage.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderInput.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderPopup.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderProgressSteps.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\dom\renderers\renderTitle.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\ieFix.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\iosFix.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\isNodeEnv.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\openPopup.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\params.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\scrollbarFix.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\setParameters.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\Timer.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\utils\utils.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\src\variables.scss" />
+  </ItemGroup>
+
+</Project>

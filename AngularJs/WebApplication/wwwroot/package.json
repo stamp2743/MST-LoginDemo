@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "angular": "^1.8.2",
+    "sweetalert2": "^10.10.4"
+  }
+}

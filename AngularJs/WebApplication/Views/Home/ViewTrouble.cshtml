@@ -1,0 +1,93 @@
+﻿@model WebApplication.Models.EmployeeModel;
+@{
+    ViewData["Title"] = "View";
+}
+
+<div ng-controller="HomeController" ng-init="Init();">
+    <div class="container-fluid">
+        <br />
+        <h6>OPL One Point Lesson</h6>
+
+        <div class="card border-primary">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            Number<input type="text" ng-model="number" readonly class="form-control">
+                        </div>
+                        <div class="col-md-5">
+                            Status<input type="text" ng-model="status" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            Date<input type="datetime-local" ng-model="date" class="form-control"><br />
+                        </div>
+
+                        <div class="col-md-2">
+                            Creator<input type="text" ng-model="creator" readonly class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            Requestor<input type="text" ng-model="requestor" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            Ext<input type="text" ng-model="ext" class="form-control"><br />
+                        </div>
+                        <div class="col-md-5">
+                            Machine<input type="text" ng-model="machine" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            Ref. Manual<input type="text" ng-model="refmanual" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            Rev.<input type="text" ng-model="rev" class="form-control"><br />
+                        </div>
+                        <div class="col-md-5">
+                            Station<input type="text" ng-model="station" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-right">
+                    <input type="button" class="btn btn-primary btn-md" value="Attachment" ng-click="Attachment();" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container-fluid">
+
+        <div class="card border-primary">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            Problem<input type="text" ng-model="problem" class="form-control"><br />
+                        </div>
+                        <div class="col-md-8">
+                            Cause<input type="text" ng-model="cause" class="form-control"><br />
+                        </div>
+                        <div class="col-md-12">
+                            @*Solution/Action<input type="text" ng-model="solution" class="form-control" placeholder="Rich Text (Can add table, picture, attached files or objec)">*@
+                            Solution/Action <br/>
+                            <textarea class="form-control" rows="15" placeholder="Rich Text (Can add table, picture, attached files or objec)"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="col-sm-12 text-right">
+
+        <input type="button" class="btn btn-info" style="font-size : 15px; width: 11%; height: 50px;" value="Confirmed review" ng-click="Confirmed();" />&nbsp;
+        <input type="button" class="btn btn-danger" style="font-size : 16px; width: 11%; height: 50px;" value="Reset" ng-click="Reset();" />&nbsp;
+        <input type="button" class="btn btn-warning" style="font-size : 16px; width: 11%; height: 50px;" value="Save as Draft" ng-click="SaveasDraft();" />&nbsp;
+        <input type="button" class="btn btn-success" style="font-size : 15px; width: 11%; height: 50px;" value="Submit to Approve" ng-click="Approve();" />&nbsp;
+
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/apps/HomeController.js"></script>
+}

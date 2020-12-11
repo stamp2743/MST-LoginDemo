@@ -1,0 +1,233 @@
+﻿@model WebApplication.Models.EmployeeModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section Css{
+    <style>
+        h1 {
+            color: rebeccapurple;
+        }
+    </style>
+}
+
+<div ng-controller="TestController" ng-init="Init();">
+    <div class="text-center">
+        <br />
+        <h1 @*class="display-4"*@>MST Correct Problem</h1>
+    </div>
+    <div class="card-body text-right">
+        Hello! Khun <span style="font-size:large;color:forestgreen;">@User.Identity.Name</span>
+    </div>
+    <div class="card-body text-right">
+        @Html.ActionLink("Log Off", "Logoff", "Home", null, new { @class = "btn btn-primary btn-lg rph-login-button" })
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+
+            <pre>Selected Model: {{example8model}} | json</pre>
+            <div class="bg-success" style="font-size : 15px; width: 7%; height: 35px;" ng-dropdown-multiselect="" options="example8data" selected-model="example8model" extra-settings="example8settings">
+            </div>
+
+
+            <br />
+            <br />
+            @*----Button----*@
+            <div class="text-center">
+                @*----Line1 Click Adept Robot Show Table----*@
+                <button id="btn1" type="button" class="btn btn-info" ng-click="mode='edit'" style="font-size : 15px; width: 10%; height: 50px;"><b>ADEPT Robot</b></button>
+                <button id="btn2" type="button" class="btn btn-success" style="font-size : 15px; width: 10%; height: 50px;"><b>Advantest PC</b></button>
+                <button id="btn3" type="button" class="btn btn-danger" style="font-size : 15px; width: 10%; height: 50px;"><b>Cleanline</b></button>
+                <button id="btn4" type="button" class="btn btn-warning" style="font-size : 15px; width: 10%; height: 50px;"><b>Controls</b></button>
+                <button id="btn5" type="button" class="btn btn-dark" style="font-size : 15px; width: 10%; height: 50px;"><b>Damper</b></button>
+                <button id="btn6" type="button" class="btn btn-primary" style="font-size : 15px; width: 10%; height: 50px;"><b>Datacon</b></button>
+                @*</div>*@
+                <br /><br />
+                @*----Line2----*@
+                <button id="btn7" type="button" class="btn btn-primary" style="font-size : 15px; width: 10%; height: 50px;"><b>DFP</b></button>
+                <button id="btn8" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>DPM</b></button>
+                <button id="btn9" type="button" class="btn btn-success" style="font-size : 15px; width: 10%; height: 50px;"><b>Excimer Laser</b></button>
+                <button id="btn10" type="button" class="btn btn-danger" style="font-size : 15px; width: 10%; height: 50px;"><b>F-SR welder</b></button>
+                <button id="btn11" type="button" class="btn btn-warning" style="font-size : 15px; width: 10%; height: 50px;"><b>Forming</b></button>
+                <button id="btn12" type="button" class="btn btn-dark" style="font-size : 15px; width: 10%; height: 50px;"><b>Gen 2 SAM</b></button>
+                <br /><br />
+                @*----Line3----*@
+                <button id="btn13" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Gen 3 Forming</b></button>
+                <button id="btn14" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>GSAAM</b></button>
+                <button id="btn15" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Kawasaki Robot</b></button>
+                <button id="btn16" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>LMS</b></button>
+                <button id="btn17" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Lumonics</b></button>
+                <button id="btn18" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Misc</b></button>
+                <br /><br />
+                @*----Line4----*@
+                <button id="btn19" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Mod Feed System</b></button>
+                <button id="btn20" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Panel Shear Module</b></button>
+                <button id="btn21" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Product Info</b></button>
+                <button id="btn22" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Test Equipment</b></button>
+                <button id="btn23" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>TVS</b></button>
+                <button id="btn24" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>UDP</b></button>
+                <br /><br />
+                @*----Line5----*@
+                <button id="btn25" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>UTA</b></button>
+                <button id="btn26" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Vacuum Sealer</b></button>
+                <button id="btn27" type="button" class="btn btn-info" style="font-size : 15px; width: 10%; height: 50px;"><b>Vision Module</b></button>
+            </div>
+            <br />
+            <div class="table-responsive">
+                <table ng-show="mode=='edit'" id="example1" class="table table-hover table-bordered table-striped">
+                    <thead class="table text-white" style="background-color: darkblue">
+                        <tr class="text-center">
+                            <th class="text-center">
+                                <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
+                            </th>
+                            <th style="width:5%;">#</th>
+                            <th style="width:10%;">Problem</th>
+                            <th style="width:15%;">Cause</th>
+                            <th style="width:15%;">Solution</th>
+                            <th style="width:10%;">Eff. Date</th>
+                            <th style="width:10%;">Approver</th>
+                            <th style="width:10%;">Approved Date</th>
+                            <th style="width:15%;">Action</th>
+                        </tr>
+                    </thead>
+                    @*-------  Show -------- *@
+                    <tbody>
+                        <tr ng-show="mode=='edit'" ng-repeat="item in model.Items">
+                            <td class="text-center">
+                                <input type="checkbox" ng-model="item.selected" ng-change="setSelectedTrouble(item)" />
+                            </td>
+                            <td>{{$index+1}}</td>
+                            <td>{{item.problem}}</td>
+                            <td>{{item.cause}}</td>
+                            <td>{{item.solution}}</td>
+                            <td>{{item.eff}}</td>
+                            <td>{{item.approver}}</td>
+                            <td>{{item.approved}}</td>
+                            <td>
+                                <button ng-model="item.selected" ng-change="setSelectedTrouble(item)" data-toggle="modal" data-target="#modalAddForm" type="button" class="btn btn-warning text-center" data-backdrop="static" data-keyboard="false">
+                                    EDIT
+                                </button>&nbsp;
+                                <button type="button" class="btn btn-success text-center" ng-click="mode = 'edit'" data-backdrop="static" data-keyboard="false">
+                                    VIEW
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            @*-----------------------------------------------------------MODAL FORM----------------------------*@
+            @*<div class='col-sm-12' style="padding-left:30px">
+                    <form class="form-horizontal" role="form" ng-submit="addRow()">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Number</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="fname" ng-model="selectedTrouble.number" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Problem</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="lname" ng-model="selectedTrouble.problem" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Cause</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="salary" ng-model="selectedTrouble.cause" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Solution</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="salary" ng-model="selectedTrouble.solution" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding-left:15px">
+                            <div>
+                                <input type="button" value="Add" ng-if="!singleEmployeeSelected" ng-click="addRow()" class="btn btn-primary" />
+                                <input type="button" value="Edit" ng-if="singleEmployeeSelected" ng-click="edit()" class="btn btn-primary" />
+                                <input type="button" class="btn btn-danger" ng-click="remove()" ng-disabled="$scope.employees.selected.length" value="Remove">
+                            </div>
+                        </div>
+                    </form>
+                </div>*@
+            <div class="container-fluid">
+                <br />
+                <h6>OPL One Point Lesson</h6>
+
+                <div class="card border-primary">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Number<input type="text" ng-model="selectedTrouble.number" class="form-control">
+                                </div>
+                                <div class="col-md-5">
+                                    Status<input type="text" ng-model="tb.status" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    Date<input type="datetime-local" ng-model="tb.date" class="form-control"><br />
+                                </div>
+
+                                <div class="col-md-2">
+                                    Creator<input type="text" ng-model="tb.creator" class="form-control">
+                                </div>
+                                <div class="col-md-2">
+                                    Requestor<input type="text" ng-model="tb.requestor" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    Ext<input type="text" ng-model="tb.ext" class="form-control"><br />
+                                </div>
+                                <div class="col-md-5">
+                                    Machine<select class="form-control" ng-options="item as item.Name for item in Machines" ng-model="tb.machine">
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    Ref. Manual<input type="text" ng-model="tb.refmanual" class="form-control">
+                                </div>
+                                <div class="col-md-2">
+                                    Rev.<input type="text" ng-model="tb.rev" class="form-control"><br />
+                                </div>
+                                <div class="col-md-5">
+                                    Station<input type="text" ng-model="tb.station" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-right">
+                            <input type="button" class="btn btn-primary btn-md" value="Attachment" ng-click="Attachment();" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="container-fluid">
+
+                <div class="card border-primary">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    Problem<input type="text" ng-model="tb.problem" class="form-control"><br />
+                                </div>
+                                <div class="col-md-8">
+                                    Cause<input type="text" ng-model="tb.cause" class="form-control"><br />
+                                </div>
+                                <div class="col-md-12">
+                                    @*Solution/Action<input type="text" ng-model="solution" class="form-control" placeholder="Rich Text (Can add table, picture, attached files or objec)">*@
+                                    Solution/Action <br />
+                                    <textarea class="form-control" ng-model="tb.solution" rows="15" placeholder="Rich Text (Can add table, picture, attached files or objec)"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+@section Scripts{
+
+    <script src="~/js/apps/TestController.js"></script>
+}
